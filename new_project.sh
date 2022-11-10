@@ -8,5 +8,5 @@ git clone --depth=1 https://github.com/coffebar/landing_template.git "$PROJECT"
 pushd "$PROJECT"
 rm -f new_project.sh
 sed -i "s|Landing|${PROJECT}|g" index.html
-npm install && ./watch.sh
+npm install && [ -z $EDITOR ] && ./watch.sh || $EDITOR index.html
 popd
