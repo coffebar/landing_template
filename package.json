@@ -7,10 +7,11 @@
     "bootstrap": "^5.2.1",
     "browser-sync": "^2.27.10",
     "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
-    "node-sass": "^7.0.3",
-    "gulp-clean-css": "^4.3.0"
+    "node-sass": "^7.0.3"
   },
   "browserslist": [
     "last 2 version",
