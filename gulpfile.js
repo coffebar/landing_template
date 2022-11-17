@@ -9,17 +9,18 @@ const cleanCSS = require('gulp-clean-css');
 const paths = {
   styles: {
     src: 'scss/*.scss',
-    dest: 'css/'
+    dest: 'css/',
   },
   html: {
-    src: './*.html'
-  }
+    src: './*.html',
+  },
 };
 
 function styles() {
-  return gulp.src(paths.styles.src)
+  return gulp
+    .src(paths.styles.src)
     .pipe(sass())
-    .pipe(postcss([ autoprefixer() ]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(browserSync.stream());
 }
@@ -36,8 +37,9 @@ function watchChanges() {
 }
 
 gulp.task('minify-css', () => {
-  return gulp.src(paths.styles.dest + '*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
+  return gulp
+    .src(paths.styles.dest + '*.css')
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(gulp.dest(paths.styles.dest));
 });
 
