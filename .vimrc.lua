@@ -16,20 +16,9 @@ local function bind(op, outer_opts)
 	end
 end
 
-vim.api.nvim_create_autocmd("DirChangedPre", {
-	group = augroup,
-	-- Undo all changes
-	callback = function()
-		vim.api.nvim_del_augroup_by_name(augroup_name)
-		-- undo keymaps
-		for _, b in ipairs(unbind_table) do
-			vim.keymap.set(b.op, b.lhs, "<nop>", { noremap = true })
-		end
-	end,
-})
+-- Setup
 
--- Create local mapping
-
+vim.notify("Setup keymaps")
 local nnoremap = bind("n")
 local vnoremap = bind("v")
 
@@ -69,3 +58,16 @@ vnoremap("<leader>er", function()
 	press("Go" .. code_line .. "<ESC>:w<CR>")
 	press(":edit " .. new_file .. "<CR>")
 end)
+
+vim.api.nvim_create_autocmd("DirChangedPre", {
+	group = augroup,
+	-- Undo all changes
+	callback = function()
+		vim.api.nvim_del_augroup_by_name(augroup_name)
+		-- undo keymaps
+		vim.notify("Undo keymaps")
+		for _, b in ipairs(unbind_table) do
+			vim.keymap.set(b.op, b.lhs, "<nop>", { noremap = true })
+		end
+	end,
+})
