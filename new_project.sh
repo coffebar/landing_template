@@ -10,8 +10,8 @@ git clone --depth=1 https://github.com/coffebar/landing_template.git "$PROJECT"
 
 pushd "$PROJECT"
 
-# remove this script
-rm -f new_project.sh
+# remove this script and readme file
+rm -f new_project.sh README.md
 # change project name in index.html
 sed -i "s|Landing|${PROJECT}|g" index.html
 # remove template repo from 'remote' in git
