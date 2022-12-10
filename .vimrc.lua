@@ -27,6 +27,7 @@ local vnoremap = bind("v")
 -- to run in async mode and see output in quickfix window
 nnoremap("<leader>ew", ":AsyncRun ./watch.sh<cr>")
 nnoremap("<leader>eb", ":AsyncRun ./build.sh<cr>")
+nnoremap("<leader>ed", ":AsyncRun ./deploy.sh<cr>")
 -- visual mode: extract selection into new scss file
 vnoremap("<leader>er", function()
 	local t = function(str)
