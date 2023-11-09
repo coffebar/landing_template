@@ -18,3 +18,4 @@ wget -O /tmp/new_project.sh https://raw.githubusercontent.com/coffebar/landing_t
 - autoprefixer
 - compile and minify scss
 - scripts for build and deploy (rsync)
+- bootstrap grid
