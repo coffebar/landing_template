@@ -21,6 +21,6 @@ git remote remove origin
 git commit -a -m "blank template"
 # install gulp related stuff
 # and open editor
-npm install && [ -z $EDITOR ] && ./watch.sh || $EDITOR index.html
+pnpm install && [ -z $EDITOR ] && ./watch.sh || $EDITOR index.html
 
 popd

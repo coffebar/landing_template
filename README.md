@@ -2,7 +2,7 @@
 
 Requires:
 
-- npm
+- pnpm
 - wget
 - git
 
